@@ -1,0 +1,11 @@
+How many ways of adding a library to our project did we learn?
+2 (Java, Maven with intellij)
+----------------------------------------------------------------------------
+1st way -> We go to the official web pages of each library(etc. Selenium) and
+download the libraries and add them to our project one by one. Keeping all libraries updated and finding and adding them to our project
+take too much time and very difficult
+----------------------------------------------------------------------------
+2nd way -> Instead of going to the web pages of all libraries we use maven with intellij. IntelliJ finds all the libraries
+downloads and adds them to our project. This is also not practical.
+-----------------------------------------------------------------------------
+3rd way -> WE prepare the list of the libraries we need, give to maven as pom.xml file, maven downloads all libraries for us
