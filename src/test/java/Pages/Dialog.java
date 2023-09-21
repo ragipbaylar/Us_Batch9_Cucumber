@@ -41,11 +41,14 @@ public class Dialog extends MyMethods {
     @FindBy(xpath = "//span[text()='Search']")
     private WebElement searchButton;
 
-    @FindBy(css = "ms-delete-button[class='ng-star-inserted']")
+    @FindBy(xpath = "//button[@color='warn']")
     private WebElement deleteButton;
 
     @FindBy(xpath = "//span[normalize-space()='Delete']")
     private WebElement deleteConfirmButton;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[2]")
+    private WebElement formShortnameInput;
 
     public WebElement getUsername() {
         return username;
@@ -93,5 +96,9 @@ public class Dialog extends MyMethods {
 
     public WebElement getDeleteConfirmButton() {
         return deleteConfirmButton;
+    }
+
+    public WebElement getFormShortnameInput() {
+        return formShortnameInput;
     }
 }
