@@ -26,6 +26,9 @@ public class Navigation extends MyMethods {
     @FindBy(xpath = "(//span[text()='Citizenships'])[1]")
     private WebElement citizenship;
 
+    @FindBy(xpath = "//span[text()='Fees']")
+    private WebElement feesButton;
+
     public WebElement getDashBoardTitle() {
         return dashBoardTitle;
     }
@@ -44,5 +47,9 @@ public class Navigation extends MyMethods {
 
     public WebElement getCitizenship() {
         return citizenship;
+    }
+
+    public WebElement getFeesButton() {
+        return feesButton;
     }
 }

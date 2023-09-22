@@ -50,6 +50,21 @@ public class Dialog extends MyMethods {
     @FindBy(xpath = "(//input[@data-placeholder='Short Name'])[2]")
     private WebElement formShortnameInput;
 
+    @FindBy(css = "input[data-placeholder='Integration Code']")
+    private WebElement feeIntegrationCode;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Priority'])[2]")
+    private WebElement formFeePriority;
+
+    @FindBy(xpath = "(//ms-save-button[@class='ng-star-inserted'])[2]")
+    private WebElement saveAndExitButton;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Code'])[1]")
+    private WebElement searchCodeInput;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Priority'])[1]")
+    private WebElement searchFeePriority;
+
     public WebElement getUsername() {
         return username;
     }
@@ -100,5 +115,25 @@ public class Dialog extends MyMethods {
 
     public WebElement getFormShortnameInput() {
         return formShortnameInput;
+    }
+
+    public WebElement getFeeIntegrationCode() {
+        return feeIntegrationCode;
+    }
+
+    public WebElement getFormFeePriority() {
+        return formFeePriority;
+    }
+
+    public WebElement getSaveAndExitButton() {
+        return saveAndExitButton;
+    }
+
+    public WebElement getSearchCodeInput() {
+        return searchCodeInput;
+    }
+
+    public WebElement getSearchFeePriority() {
+        return searchFeePriority;
     }
 }
