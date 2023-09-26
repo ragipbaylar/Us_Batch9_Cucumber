@@ -65,6 +65,30 @@ public class Dialog extends MyMethods {
     @FindBy(xpath = "(//input[@data-placeholder='Priority'])[1]")
     private WebElement searchFeePriority;
 
+    @FindBy(css = "mat-select[formcontrolname='academicPeriod']")
+    private WebElement academicPeriodDropDown;
+
+    @FindBy(xpath = "(//mat-option//span[@class='mat-option-text'])[2]")
+    private WebElement academicPeriodOption;
+
+    @FindBy(css = "mat-select[formcontrolname='id']")
+    private WebElement gradeLevelDropDown;
+
+    @FindBy(xpath = "(//mat-option//span[@class='mat-option-text'])[4]")
+    private WebElement gradeLevelOption;
+
+    @FindBy(xpath = "//span[text()='Description']")
+    private WebElement description;
+
+    @FindBy(xpath = "//span[text()='Notes']")
+    private WebElement notes;
+
+    @FindBy(css = "iframe[class='tox-edit-area__iframe']")
+    private WebElement descriptionAndNotesIframe;
+
+    @FindBy(css = "body[id='tinymce']>p")
+    private WebElement descriptionAndNoteInput;
+
     public WebElement getUsername() {
         return username;
     }
@@ -135,5 +159,37 @@ public class Dialog extends MyMethods {
 
     public WebElement getSearchFeePriority() {
         return searchFeePriority;
+    }
+
+    public WebElement getAcademicPeriodDropDown() {
+        return academicPeriodDropDown;
+    }
+
+    public WebElement getAcademicPeriodOption() {
+        return academicPeriodOption;
+    }
+
+    public WebElement getGradeLevelDropDown() {
+        return gradeLevelDropDown;
+    }
+
+    public WebElement getGradeLevelOption() {
+        return gradeLevelOption;
+    }
+
+    public WebElement getDescription() {
+        return description;
+    }
+
+    public WebElement getNotes() {
+        return notes;
+    }
+
+    public WebElement getDescriptionAndNotesIframe() {
+        return descriptionAndNotesIframe;
+    }
+
+    public WebElement getDescriptionAndNoteInput() {
+        return descriptionAndNoteInput;
     }
 }

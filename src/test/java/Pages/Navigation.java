@@ -29,6 +29,15 @@ public class Navigation extends MyMethods {
     @FindBy(xpath = "//span[text()='Fees']")
     private WebElement feesButton;
 
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[1]")
+    private WebElement entranceExamsButton;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[2]")
+    private WebElement entranceExamsSetup;
+
+    @FindBy(xpath = "(//span[text()='Entrance Exams'])[2]")
+    private WebElement entranceExamsInnerButton;
+
     public WebElement getDashBoardTitle() {
         return dashBoardTitle;
     }
@@ -51,5 +60,17 @@ public class Navigation extends MyMethods {
 
     public WebElement getFeesButton() {
         return feesButton;
+    }
+
+    public WebElement getEntranceExamsButton() {
+        return entranceExamsButton;
+    }
+
+    public WebElement getEntranceExamsSetup() {
+        return entranceExamsSetup;
+    }
+
+    public WebElement getEntranceExamsInnerButton() {
+        return entranceExamsInnerButton;
     }
 }

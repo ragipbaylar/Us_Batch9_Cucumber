@@ -9,13 +9,13 @@ import io.cucumber.java.BeforeStep;
 public class Hooks {
 
     @Before // Runs before each scenario
-    public void beforeScenario(){
-        //System.out.println("Scenario is starting");
+    public void beforeScenario() {
+        System.out.println("Scenario is starting");
     }
 
     @After // Runs after each scenario
-    public void afterScenario(){
-        //System.out.println("Scenario has ended");
+    public void afterScenario() {
+        System.out.println("Scenario has ended");
         DriverClass.quitDriver();
     }
 
