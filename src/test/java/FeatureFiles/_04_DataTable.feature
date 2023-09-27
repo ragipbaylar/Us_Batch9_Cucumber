@@ -1,5 +1,6 @@
 Feature: Data Table Example
 
+  @FireTest
   Scenario: Data Table with 1 column
     Given Go to the Web Page
     And Fill the form with valid data

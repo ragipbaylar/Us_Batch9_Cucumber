@@ -23,3 +23,5 @@ Feature: Entrance Exams Function
       | Batch 9 Exam 3 | Batch 9 is fun                     | We are having soo much fun      |
       | Batch 9 Exam 4 | Batch 9 don't give up              | We can do it                    |
       | Batch 9 Exam 5 | We are almost ready for the market | We will be better than everyone |
+
+    # TODO: Create a scenario to delete all entrance exams the we have created

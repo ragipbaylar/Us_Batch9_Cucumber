@@ -6,6 +6,7 @@ Feature: Fees Function
     And Click on Login Button
     And Navigate to Fees Page
 
+  @SmokeTest @FireTest
   Scenario: Add a Fee
     And Click on add Button
     And Fill the form
@@ -17,6 +18,7 @@ Feature: Fees Function
     Then Success message should be displayed
 
     #Write a scenario to delete the fee you have created
+  @SmokeTest @FireTest
   Scenario: Delete Fee
     And Search for the fee name
       | Batch 9 Fee |

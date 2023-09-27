@@ -1,10 +1,13 @@
 package StepDefinitions;
 
 import Utilities.DriverClass;
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
+import io.cucumber.java.*;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Hooks {
 
@@ -14,8 +17,18 @@ public class Hooks {
     }
 
     @After // Runs after each scenario
-    public void afterScenario() {
+    public void afterScenario(Scenario scenario) {
         System.out.println("Scenario has ended");
+
+        if (scenario.isFailed()){
+            TakesScreenshot takesScreenshot = (TakesScreenshot) DriverClass.getDriver();
+            File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
+            try {
+                FileUtils.copyFile(file,new File("src/test/java/ScreenShots/screenshot.png") );
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         DriverClass.quitDriver();
     }
 

@@ -74,7 +74,7 @@ public class Dialog extends MyMethods {
     @FindBy(css = "mat-select[formcontrolname='id']")
     private WebElement gradeLevelDropDown;
 
-    @FindBy(xpath = "(//mat-option//span[@class='mat-option-text'])[4]")
+    @FindBy(xpath = "//span[normalize-space()='12']")
     private WebElement gradeLevelOption;
 
     @FindBy(xpath = "//span[text()='Description']")

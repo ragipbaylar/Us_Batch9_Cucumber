@@ -9,7 +9,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class MyMethods {
-    public WebDriverWait wait = new WebDriverWait(DriverClass.getDriver(), Duration.ofSeconds(10));
+    public WebDriverWait wait = new WebDriverWait(DriverClass.getDriver(), Duration.ofSeconds(2));
 
     public void clickMethod(WebElement element) {
         waitUntilClickable(element);
