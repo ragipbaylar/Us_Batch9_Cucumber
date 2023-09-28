@@ -8,6 +8,8 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Hooks {
 
@@ -21,13 +23,18 @@ public class Hooks {
         System.out.println("Scenario has ended");
 
         if (scenario.isFailed()){
-            TakesScreenshot takesScreenshot = (TakesScreenshot) DriverClass.getDriver();
-            File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
-            try {
-                FileUtils.copyFile(file,new File("src/test/java/ScreenShots/screenshot.png") );
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+           final byte[] byteImage = ((TakesScreenshot)(DriverClass.getDriver())).getScreenshotAs(OutputType.BYTES);
+           scenario.attach(byteImage,"image/png", scenario.getName());
+
+//            LocalDateTime timeOfError = LocalDateTime.now();
+//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM_dd_yyyy_hh_mm_ss_SSS");
+//            TakesScreenshot takesScreenshot = (TakesScreenshot) DriverClass.getDriver();
+//            File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
+//            try {
+//                FileUtils.copyFile(file,new File("src/test/java/ScreenShots/screenshot"+timeOfError.format(formatter)+".png"));
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
         }
         DriverClass.quitDriver();
     }
