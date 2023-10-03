@@ -1,30 +1,32 @@
 package StepDefinitions;
 
 import Utilities.DriverClass;
+import Utilities.ExcelUtilities;
 import io.cucumber.java.*;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
-import java.io.File;
-import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Hooks {
+    LocalDateTime startTime;
+    LocalDateTime endTime;
 
     @Before // Runs before each scenario
     public void beforeScenario() {
         System.out.println("Scenario is starting");
+        startTime = LocalDateTime.now();
     }
 
     @After // Runs after each scenario
     public void afterScenario(Scenario scenario) {
         System.out.println("Scenario has ended");
+        endTime = LocalDateTime.now();
+        Duration duration = Duration.between(startTime,endTime);
 
-        if (scenario.isFailed()){
-           final byte[] byteImage = ((TakesScreenshot)(DriverClass.getDriver())).getScreenshotAs(OutputType.BYTES);
-           scenario.attach(byteImage,"image/png", scenario.getName());
+        if (scenario.isFailed()) {
+            final byte[] byteImage = ((TakesScreenshot) (DriverClass.getDriver())).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(byteImage, "image/png", scenario.getName());
 
 //            LocalDateTime timeOfError = LocalDateTime.now();
 //            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM_dd_yyyy_hh_mm_ss_SSS");
@@ -36,6 +38,7 @@ public class Hooks {
 //                throw new RuntimeException(e);
 //            }
         }
+        ExcelUtilities.writeInExcel("src/test/java/ApachePOI/Resources/ScenarioResults.xlsx", scenario, startTime, endTime,duration);
         DriverClass.quitDriver();
     }
 
