@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class Dialog extends MyMethods {
     public Dialog() {
         PageFactory.initElements(DriverClass.getDriver(),this);
@@ -88,6 +90,9 @@ public class Dialog extends MyMethods {
 
     @FindBy(css = "body[id='tinymce']>p")
     private WebElement descriptionAndNoteInput;
+
+    @FindBy(xpath = "//tbody[@class='mdc-data-table__content']//td[2]")
+    private List<WebElement> statesList;
 
     public WebElement getUsername() {
         return username;
@@ -191,5 +196,9 @@ public class Dialog extends MyMethods {
 
     public WebElement getDescriptionAndNoteInput() {
         return descriptionAndNoteInput;
+    }
+
+    public List<WebElement> getStatesList() {
+        return statesList;
     }
 }
