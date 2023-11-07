@@ -107,7 +107,7 @@
                 <version>3.2.1</version>
                 <configuration>
                     <includes>
-                        <include>**/_04_RunnerForGroups.class</include>
+                        <include>target/test-classes/RunnerClasses/_04_RunnerForGroups.class</include>
                     </includes>
                 </configuration>
             </plugin>
